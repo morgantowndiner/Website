@@ -29,8 +29,8 @@
     id="fullframe"
     src="https://michelleraymond01.wixsite.com/diner/home"
     title="Diner Site"
-    allowfullscreen
-  ></iframe>
+    allowfullscreen>
+  </iframe>
 
   <script>
     function setFullHeight() {
@@ -39,7 +39,28 @@
       const iframe = document.getElementById('fullframe');
       iframe.style.height = `${window.innerHeight}px`;
     }
-
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 10) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+  window.dispatchEvent(new Event('scroll'));
+    
+    mobileMenuBtn.addEventListener('click', function() {
+      mobileNav.classList.toggle('active');
+    });
+    
+    document.querySelectorAll('.mobile-nav-links .nav-link').forEach(link => {
+      link.addEventListener('click', function() {
+        mobileNav.classList.remove('active');
+      });
+    });
+    
     window.addEventListener('resize', setFullHeight);
     window.addEventListener('orientationchange', setFullHeight);
     setFullHeight(); 
