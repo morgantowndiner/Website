@@ -9,8 +9,8 @@
     html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
-      height: 100%;
+      width: 320%;
+      height: 320%;
       overflow: hidden;
       -webkit-overflow-scrolling: touch;
       touch-action: manipulation;
@@ -60,7 +60,7 @@
         mobileNav.classList.remove('active');
       });
     });
-    
+
     window.addEventListener('resize', setFullHeight);
     window.addEventListener('orientationchange', setFullHeight);
     setFullHeight(); 
