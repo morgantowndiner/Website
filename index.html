@@ -5,24 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
   <title>Diner</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 320%;
-      height: 320%;
-      overflow: hidden;
-      -webkit-overflow-scrolling: touch;
-      touch-action: manipulation;
-    }
-
-    iframe {
-      border: none;
-      width: 100vw;
-      height: 100dvh; 
-      display: block;
-    }
-  </style>
 </head>
 <body>
   <iframe
@@ -31,39 +13,5 @@
     title="Diner Site"
     allowfullscreen>
   </iframe>
-
-  <script>
-    function setFullHeight() {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-      const iframe = document.getElementById('fullframe');
-      iframe.style.height = `${window.innerHeight}px`;
-    }
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileNav = document.getElementById('mobile-nav');
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 10) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-    
-  window.dispatchEvent(new Event('scroll'));
-    
-    mobileMenuBtn.addEventListener('click', function() {
-      mobileNav.classList.toggle('active');
-    });
-    
-    document.querySelectorAll('.mobile-nav-links .nav-link').forEach(link => {
-      link.addEventListener('click', function() {
-        mobileNav.classList.remove('active');
-      });
-    });
-
-    window.addEventListener('resize', setFullHeight);
-    window.addEventListener('orientationchange', setFullHeight);
-    setFullHeight(); 
-  </script>
 </body>
 </html>
